@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "alwaysStrict": true,
+    "baseUrl": "src",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "lib": [
+      "esnext.asynciterable",
+      "es2021",
+      "dom"
+    ],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUncheckedIndexedAccess": true,
+    "outDir": "dest",
+    "paths": {
+      "@deploybot/*": [
+        "*"
+      ],
+      "@xene/*": [
+        "xene/*"
+      ]
+    },
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "target": "ES2021",
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ],
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ]
+  },
+  "exclude": [
+    "dest",
+    "node_modules",
+    "scripts"
+  ]
+}
