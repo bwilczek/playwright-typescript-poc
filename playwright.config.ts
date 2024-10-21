@@ -21,7 +21,7 @@ export default defineConfig({
 
   use: {
     // Base URL to use in actions like `await page.goto('/')`.
-    baseURL: 'https://bwilczek.github.io/watir_pump_tutorial',
+    baseURL: 'https://bwilczek.github.io/',
 
     // Collect trace when retrying the failed test.
     trace: 'on-first-retry',
