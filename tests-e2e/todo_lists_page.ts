@@ -10,14 +10,6 @@ class ToDoListItem  {
     this.name = root.locator("xpath=./*[@role='name']")
     this.removeButton = root.locator("xpath=./*[@role='rm']")
   }
-
-  async remove() {
-    await this.removeButton.click()
-  }
-
-  async nameAsText(): Promise<null | string> {
-    return this.name.textContent()
-  }
 }
 
 class ToDoList {
@@ -47,7 +39,7 @@ class ToDoList {
 
     // Array.find won't work with async predicate, hence this loop
     for(const item of items) {
-      const currentItemName = (await item.nameAsText())
+      const currentItemName = (await item.name.textContent())
       if(currentItemName == name) {
         return item
       }
@@ -61,7 +53,7 @@ class ToDoList {
     return await Promise.all(
       items.map(
         async (item) => {
-          return await item.nameAsText()
+          return await item.name.textContent()
         }
       )
     )
@@ -100,7 +92,7 @@ test('using one of many lists on the page', async ({ page }) => {
 
   if(vacuumItem !== undefined) {
     expect(vacuumItem.name).toHaveText('Vacuum')
-    await vacuumItem.remove()
+    await vacuumItem.removeButton.click()
     expect(await homeList.itemsAsText()).not.toContain('Vacuum')
   }
 })
