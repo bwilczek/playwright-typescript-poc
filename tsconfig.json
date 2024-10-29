@@ -20,16 +20,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUncheckedIndexedAccess": true,
-    "outDir": "dest",
-    "paths": {
-      "@deploybot/*": [
-        "*"
-      ],
-      "@xene/*": [
-        "xene/*"
-      ]
-    },
-    "strictBindCallApply": true,
+    "outDir": "dist",
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "skipLibCheck": true,
@@ -37,16 +28,10 @@
     "typeRoots": [
       "./types",
       "./node_modules/@types"
-    ],
-    "plugins": [
-      {
-        "transform": "typescript-transform-paths"
-      }
     ]
   },
   "exclude": [
-    "dest",
-    "node_modules",
-    "scripts"
+    "dist",
+    "node_modules"
   ]
 }
